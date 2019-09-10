@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS MyTable_A;
+CREATE TABLE IF NOT EXISTS MyTable_A (
+	NAME "Text",
+	Age "NUM"
+);
+
