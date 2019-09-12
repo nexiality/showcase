@@ -1,0 +1,36 @@
+<script>
+  $(document).ready(function () {
+    $('#search${nexial.scope.currentIteration}').DataTable({
+      "data": ${search-result.json},
+      "columnDefs": [
+        {
+          "render":  function (data, type, row) { return '<img src="' + data + '" title="' + row[1] + '"></img>'; },
+          "targets": 0
+        },
+        {
+          "render":  function (data, type, row) { return '<a href="' + row[2] + '">' + data + '</a>'; },
+          "targets": 1
+        },
+        {"visible": false, "searchable": false, "targets": 2},
+        {"render": function (data, type, row) { return data; }, "targets": 3}
+      ]
+    });
+  });
+</script>
+<div class="search_results">
+  <div class="search-term">Search Term: ${search.term}</div>
+  <div class="result-count">Matches: ${results.count}</div>
+  <table id="search${nexial.scope.currentIteration}" class="display" style="width:100%">
+    <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>URL</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+  </table>
+</div>
+<br/><br/>
+<hr/>
+<br/><br/><br/><br/>
